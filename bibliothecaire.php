@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Librarian Dashboard</title>
+    <title>Tableau de bord du bibliothecaire</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
@@ -12,60 +12,60 @@
     <div class="container mt-4">
         <div class="text-right">
             <div>
-                <a href="connextion.php" class="btn btn-danger">Logout</a>
+                <a href="connextion.php" class="btn btn-danger">Deconnexion</a>
             </div>
         </div>
         <div class="text-center">
-            <h1>Library Management System</h1>
-            <p>Welcome, Librarian!</p>
+            <h1>Systeme de Gestion de Bibliotheque</h1>
+            <p>Bienvenue, Bibliothecaire !</p>
         </div>
 
-        <!-- Librarian View -->
-        <h2>Librarian Dashboard</h2>
+        <!-- Vue du bibliothecaire -->
+        <h2>Tableau de bord du bibliothecaire</h2>
         <div class="card mb-3">
             <div class="card-body">
-                <h5 class="card-title">Track Books</h5>
-                <button class="btn btn-primary" data-toggle="modal" data-target="#viewBookModal">View All Books</button>
-                <button class="btn btn-secondary" data-toggle="modal" data-target="#statusBookModal">Check Book Status</button>
+                <h5 class="card-title">Suivre les livres</h5>
+                <button class="btn btn-primary" data-toggle="modal" data-target="#viewBookModal">Voir tous les livres</button>
+                <button class="btn btn-secondary" data-toggle="modal" data-target="#statusBookModal">Verifier l'etat d'un livre</button>
             </div>
         </div>
         <div class="card mb-3">
             <div class="card-body">
-                <h5 class="card-title">Handle Loans</h5>
-                <button class="btn btn-primary" data-toggle="modal" data-target="#issueBookModal">Issue Book</button>
-                <button class="btn btn-warning" data-toggle="modal" data-target="#recieveBookModal">Receive Book</button>
+                <h5 class="card-title">Gerer les prets</h5>
+                <button class="btn btn-primary" data-toggle="modal" data-target="#issueBookModal">emettre un livre</button>
+                <button class="btn btn-warning" data-toggle="modal" data-target="#recieveBookModal">Recevoir un livre</button>
             </div>
         </div>
         <div class="card mb-3">
             <div class="card-body">
-                <h5 class="card-title">Reminder Loans</h5>
-                <button class="btn btn-primary">Send Reminder</button>
+                <h5 class="card-title">Rappels de prets</h5>
+                <button class="btn btn-primary">Envoyer un rappel</button>
             </div>
         </div>
 
-        <!-- View All Books Modal -->
+        <!-- Modal Voir tous les livres -->
         <div class="modal fade" id="viewBookModal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">All Books</h5>
+                        <h5 class="modal-title">Tous les livres</h5>
                         <button type="button" class="close" data-dismiss="modal">
                             <span>&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>Here is a list of all available books in the library:</p>
+                        <p>Voici une liste de tous les livres disponibles dans la bibliotheque :</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Check Book Status Modal -->
+        <!-- Modal Verifier l'etat d'un livre -->
         <div class="modal fade" id="statusBookModal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Check Book Status</h5>
+                        <h5 class="modal-title">Verifier l'etat d'un livre</h5>
                         <button type="button" class="close" data-dismiss="modal">
                             <span>&times;</span>
                         </button>
@@ -73,25 +73,25 @@
                     <div class="modal-body">
                         <form>
                             <div class="form-group">
-                                <label for="statusBookId">Enter Book ID</label>
-                                <input type="text" id="statusBookId" class="form-control" placeholder="Book ID" required>
+                                <label for="statusBookId">Entrez l'ID du livre</label>
+                                <input type="text" id="statusBookId" class="form-control" placeholder="ID du livre" required>
                             </div>
-                            <button type="button" class="btn btn-primary" onclick="checkBookStatus()">Check Status</button>
+                            <button type="button" class="btn btn-primary" onclick="checkBookStatus()">Verifier l'etat</button>
                         </form>
                         <div id="bookStatusResult" class="mt-3">
-                            <!-- Dynamic status will be displayed here -->
+                            <!-- L'etat dynamique s'affichera ici -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Issue Book Modal -->
+        <!-- Modal emettre un livre -->
         <div class="modal fade" id="issueBookModal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Issue Book</h5>
+                        <h5 class="modal-title">emettre un livre</h5>
                         <button type="button" class="close" data-dismiss="modal">
                             <span>&times;</span>
                         </button>
@@ -99,26 +99,26 @@
                     <div class="modal-body">
                         <form>
                             <div class="form-group">
-                                <label for="issueBookId">Book ID</label>
-                                <input type="text" id="issueBookId" class="form-control" placeholder="Book ID" required>
+                                <label for="issueBookId">ID du livre</label>
+                                <input type="text" id="issueBookId" class="form-control" placeholder="ID du livre" required>
                             </div>
                             <div class="form-group">
-                                <label for="issueUserId">User ID</label>
-                                <input type="text" id="issueUserId" class="form-control" placeholder="User ID" required>
+                                <label for="issueUserId">ID de l'utilisateur</label>
+                                <input type="text" id="issueUserId" class="form-control" placeholder="ID de l'utilisateur" required>
                             </div>
-                            <button type="submit" class="btn btn-primary">Issue Book</button>
+                            <button type="submit" class="btn btn-primary">emettre</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Receive Book Modal -->
+        <!-- Modal Recevoir un livre -->
         <div class="modal fade" id="recieveBookModal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Receive Book</h5>
+                        <h5 class="modal-title">Recevoir un livre</h5>
                         <button type="button" class="close" data-dismiss="modal">
                             <span>&times;</span>
                         </button>
@@ -126,10 +126,10 @@
                     <div class="modal-body">
                         <form>
                             <div class="form-group">
-                                <label for="returnBookId">Book ID</label>
-                                <input type="text" id="returnBookId" class="form-control" placeholder="Book ID" required>
+                                <label for="returnBookId">ID du livre</label>
+                                <input type="text" id="returnBookId" class="form-control" placeholder="ID du livre" required>
                             </div>
-                            <button type="submit" class="btn btn-warning">Mark as Returned</button>
+                            <button type="submit" class="btn btn-warning">Marquer comme retourne</button>
                         </form>
                     </div>
                 </div>

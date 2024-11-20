@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administrator Dashboard</title>
+    <title>Tableau de bord de l'administrateur</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
@@ -12,39 +12,39 @@
     <div class="container mt-4">
         <div class="text-right">
             <div>
-                <a href="connextion.php" class="btn btn-danger">Logout</a>
+                <a href="connextion.php" class="btn btn-danger">Deconnexion</a>
             </div>
         </div>
         <div class="text-center">
-            <h1>Library Management System</h1>
-            <p>Welcome, Administrator!</p>
+            <h1>Systeme de gestion de bibliotheque</h1>
+            <p>Bienvenue, Administrateur !</p>
         </div>
         
-        <!-- Administrator View -->
-        <h2>Administrator Dashboard</h2>
+        <!-- Vue de l'administrateur -->
+        <h2>Tableau de bord de l'administrateur</h2>
         <div class="card mb-3">
             <div class="card-body">
-                <h5 class="card-title">Manage Books</h5>
-                <button class="btn btn-primary" data-toggle="modal" data-target="#addBookModal">Add Book</button>
-                <button class="btn btn-secondary" data-toggle="modal" data-target="#editBookModal">Edit Book</button>
-                <button class="btn btn-danger" data-toggle="modal" data-target="#deleteBookModal">Delete Book</button>
+                <h5 class="card-title">Gerer les livres</h5>
+                <button class="btn btn-primary" data-toggle="modal" data-target="#addBookModal">Ajouter un livre</button>
+                <button class="btn btn-secondary" data-toggle="modal" data-target="#editBookModal">Modifier un livre</button>
+                <button class="btn btn-danger" data-toggle="modal" data-target="#deleteBookModal">Supprimer un livre</button>
             </div>
         </div>
         <div class="card mb-3">
             <div class="card-body">
-                <h5 class="card-title">Manage Users</h5>
-                <button class="btn btn-primary" data-toggle="modal" data-target="#addUserModal">Add User</button>
-                <button class="btn btn-secondary" data-toggle="modal" data-target="#editUserModal">Edit User</button>
-                <button class="btn btn-danger" data-toggle="modal" data-target="#deleteUserModal">Delete User</button>
+                <h5 class="card-title">Gerer les utilisateurs</h5>
+                <button class="btn btn-primary" data-toggle="modal" data-target="#addUserModal">Ajouter un utilisateur</button>
+                <button class="btn btn-secondary" data-toggle="modal" data-target="#editUserModal">Modifier un utilisateur</button>
+                <button class="btn btn-danger" data-toggle="modal" data-target="#deleteUserModal">Supprimer un utilisateur</button>
             </div>
         </div>
 
-        <!-- Add Book Modal -->
+        <!-- Modal Ajouter un livre -->
         <div class="modal fade" id="addBookModal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Add Book</h5>
+                        <h5 class="modal-title">Ajouter un livre</h5>
                         <button type="button" class="close" data-dismiss="modal">
                             <span>&times;</span>
                         </button>
@@ -52,30 +52,30 @@
                     <div class="modal-body">
                         <form>
                             <div class="form-group">
-                                <label for="bookTitle">Title</label>
+                                <label for="bookTitle">Titre</label>
                                 <input type="text" id="bookTitle" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <label for="bookAuthor">Author</label>
+                                <label for="bookAuthor">Auteur</label>
                                 <input type="text" id="bookAuthor" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <label for="bookCategory">Category</label>
+                                <label for="bookCategory">Categorie</label>
                                 <input type="text" id="bookCategory" class="form-control" required>
                             </div>
-                            <button type="submit" class="btn btn-primary">Save</button>
+                            <button type="submit" class="btn btn-primary">Enregistrer</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Edit Book Modal -->
+        <!-- Modal Modifier un livre -->
         <div class="modal fade" id="editBookModal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Edit Book</h5>
+                        <h5 class="modal-title">Modifier un livre</h5>
                         <button type="button" class="close" data-dismiss="modal">
                             <span>&times;</span>
                         </button>
@@ -83,34 +83,34 @@
                     <div class="modal-body">
                         <form>
                             <div class="form-group">
-                                <label for="editBookId">Book ID</label>
+                                <label for="editBookId">ID du livre</label>
                                 <input type="text" id="editBookId" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <label for="editBookTitle">Title</label>
+                                <label for="editBookTitle">Titre</label>
                                 <input type="text" id="editBookTitle" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="editBookAuthor">Author</label>
+                                <label for="editBookAuthor">Auteur</label>
                                 <input type="text" id="editBookAuthor" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="editBookCategory">Category</label>
+                                <label for="editBookCategory">Categorie</label>
                                 <input type="text" id="editBookCategory" class="form-control">
                             </div>
-                            <button type="submit" class="btn btn-primary">Update</button>
+                            <button type="submit" class="btn btn-primary">Mettre à jour</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Delete Book Modal -->
+        <!-- Modal Supprimer un livre -->
         <div class="modal fade" id="deleteBookModal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Delete Book</h5>
+                        <h5 class="modal-title">Supprimer un livre</h5>
                         <button type="button" class="close" data-dismiss="modal">
                             <span>&times;</span>
                         </button>
@@ -118,22 +118,22 @@
                     <div class="modal-body">
                         <form>
                             <div class="form-group">
-                                <label for="deleteBookId">Book ID</label>
+                                <label for="deleteBookId">ID du livre</label>
                                 <input type="text" id="deleteBookId" class="form-control" required>
                             </div>
-                            <button type="submit" class="btn btn-danger">Delete</button>
+                            <button type="submit" class="btn btn-danger">Supprimer</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Add User Modal -->
+        <!-- Modal Ajouter un utilisateur -->
         <div class="modal fade" id="addUserModal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Add User</h5>
+                        <h5 class="modal-title">Ajouter un utilisateur</h5>
                         <button type="button" class="close" data-dismiss="modal">
                             <span>&times;</span>
                         </button>
@@ -141,7 +141,7 @@
                     <div class="modal-body">
                         <form>
                             <div class="form-group">
-                                <label for="userName">Name</label>
+                                <label for="userName">Nom</label>
                                 <input type="text" id="userName" class="form-control" required>
                             </div>
                             <div class="form-group">
@@ -149,30 +149,30 @@
                                 <input type="email" id="userEmail" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <label for="password">Password</label>
+                                <label for="password">Mot de passe</label>
                                 <input type="text" id="password" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label for="userRole">Role</label>
                                 <select id="userRole" class="form-control" required>
-                                    <option value="admin">Administrator</option>
-                                    <option value="librarian">Librarian</option>
-                                    <option value="user">User</option>
+                                    <option value="admin">Administrateur</option>
+                                    <option value="librarian">Bibliothecaire</option>
+                                    <option value="user">Utilisateur</option>
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-primary">Save</button>
+                            <button type="submit" class="btn btn-primary">Enregistrer</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Edit User Modal -->
+        <!-- Modal Modifier un utilisateur -->
         <div class="modal fade" id="editUserModal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Edit User</h5>
+                        <h5 class="modal-title">Modifier un utilisateur</h5>
                         <button type="button" class="close" data-dismiss="modal">
                             <span>&times;</span>
                         </button>
@@ -180,11 +180,11 @@
                     <div class="modal-body">
                         <form>
                             <div class="form-group">
-                                <label for="editUserId">User ID</label>
+                                <label for="editUserId">ID de l'utilisateur</label>
                                 <input type="text" id="editUserId" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <label for="editUserName">Name</label>
+                                <label for="editUserName">Nom</label>
                                 <input type="text" id="editUserName" class="form-control">
                             </div>
                             <div class="form-group">
@@ -192,30 +192,30 @@
                                 <input type="email" id="editUserEmail" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="editpassword">Password</label>
+                                <label for="editpassword">Mot de passe</label>
                                 <input type="text" id="editPassword" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="editUserRole">Role</label>
                                 <select id="editUserRole" class="form-control">
-                                    <option value="admin">Administrator</option>
-                                    <option value="librarian">Librarian</option>
-                                    <option value="user">User</option>
+                                    <option value="admin">Administrateur</option>
+                                    <option value="librarian">Bibliothecaire</option>
+                                    <option value="user">Utilisateur</option>
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-primary">Update</button>
+                            <button type="submit" class="btn btn-primary">Mettre à jour</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Delete User Modal -->
+        <!-- Modal Supprimer un utilisateur -->
         <div class="modal fade" id="deleteUserModal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Delete User</h5>
+                        <h5 class="modal-title">Supprimer un utilisateur</h5>
                         <button type="button" class="close" data-dismiss="modal">
                             <span>&times;</span>
                         </button>
@@ -223,10 +223,10 @@
                     <div class="modal-body">
                         <form>
                             <div class="form-group">
-                                <label for="deleteUserId">User ID</label>
+                                <label for="deleteUserId">ID de l'utilisateur</label>
                                 <input type="text" id="deleteUserId" class="form-control" required>
                             </div>
-                            <button type="submit" class="btn btn-danger">Delete</button>
+                            <button type="submit" class="btn btn-danger">Supprimer</button>
                         </form>
                     </div>
                 </div>

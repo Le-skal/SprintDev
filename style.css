@@ -14,6 +14,7 @@ body {
 
 h1, h2 {
     font-weight: 700;
+    text-shadow: 2px 4px 6px rgba(58, 58, 58, 0.932); 
 }
 
 p {
@@ -38,6 +39,7 @@ p {
 .text-center p {
     font-size: 1.2rem;
     color: #000;
+    text-shadow: 2px 4px 6px rgb(30, 30, 30) !important; 
 }
 
 /* Card Styles */
