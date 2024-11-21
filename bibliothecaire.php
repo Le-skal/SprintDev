@@ -40,7 +40,7 @@
         <div class="card mb-3">
             <div class="card-body">
                 <h5 class="card-title">Rappels de prets</h5>
-                <button class="btn btn-primary">Envoyer un rappel</button>
+                <button class="btn btn-primary" data-toggle="modal" data-target="#reminderModal">Envoyer un rappel</button>
             </div>
         </div>
 
@@ -160,6 +160,32 @@
                             </div>
                             <button type="submit" class="btn btn-warning">Marquer comme retourne</button>
                         </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Envoyer un rappel -->
+        <div class="modal fade" id="reminderModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Envoyer un rappel</h5>
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span>&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="reminderForm">
+                            <div class="form-group">
+                                <label for="reminderUserId">ID de l'utilisateur</label>
+                                <input type="text" id="reminderUserId" class="form-control" placeholder="ID de l'utilisateur" required>
+                            </div>
+                            <button type="button" class="btn btn-primary" onclick="sendReminder()">Envoyer le rappel</button>
+                        </form>
+                        <div id="reminderResult" class="mt-3">
+                            <!-- Résultat dynamique -->
+                        </div>
                     </div>
                 </div>
             </div>
