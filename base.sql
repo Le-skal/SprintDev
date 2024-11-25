@@ -7,43 +7,45 @@
 
 -- Table Livres
 CREATE TABLE Livres (
-    ID INT PRIMARY KEY,
+    ID INT(11) NOT NULL AUTO_INCREMENT,
     Titre VARCHAR(255) NOT NULL,
-    Auteur VARCHAR(255),  -- On pourrait aussi avoir une table Auteur séparée et utiliser une clé étrangère ici
-    Categorie VARCHAR(100), -- De même, une table Categorie serait plus normalisée
-    Etat VARCHAR(50)  -- (disponible, emprunté, réservé) - On pourrait utiliser un ENUM pour une meilleure intégrité
+    Auteur VARCHAR(255) DEFAULT NULL,
+    Categorie VARCHAR(100) DEFAULT NULL,
+    Etat VARCHAR(50) DEFAULT NULL,
+    PRIMARY KEY (ID)
 );
 
 -- Table Utilisateurs
 CREATE TABLE Utilisateurs (
-    ID INT PRIMARY KEY,
+    ID INT(11) NOT NULL AUTO_INCREMENT,
     Nom VARCHAR(255) NOT NULL,
-    Email VARCHAR(255) UNIQUE NOT NULL,
-    Role VARCHAR(50) NOT NULL,  -- (administrateur, bibliothécaire, utilisateur) - Encore une fois, un ENUM serait préférable
-    DateInscription DATE,
-    MotDePasse VARCHAR(255) NOT NULL -- Important de stocker les mots de passe de manière sécurisée (hachage)
+    Email VARCHAR(255) NOT NULL,
+    Role VARCHAR(50) NOT NULL,
+    DateInscription DATE NOT NULL,
+    MotDePasse VARCHAR(255) NOT NULL,
+    PRIMARY KEY (ID),
+    UNIQUE KEY (Email)
 );
 
 -- Table Emprunts
 CREATE TABLE Emprunts (
-    ID INT PRIMARY KEY,
-    Utilisateur_ID INT,
-    Livre_ID INT,
-    DateEmprunt DATE,
-    DateEcheance DATE,
-    Retard VARCHAR(50), 
-    FOREIGN KEY (Utilisateur_ID) REFERENCES Utilisateurs(ID),
-    FOREIGN KEY (Livre_ID) REFERENCES Livres(ID)
+    ID INT(11) NOT NULL AUTO_INCREMENT,
+    Utilisateur_ID INT(11) DEFAULT NULL,
+    Livre_ID INT(11) DEFAULT NULL,
+    DateEmprunt DATE DEFAULT NULL,
+    DateEcheance DATE DEFAULT NULL,
+    Retard TINYINT(1) DEFAULT NULL,
+    PRIMARY KEY (ID)
 );
+
 
 -- Table Reservations
 CREATE TABLE Reservations (
-    ID INT PRIMARY KEY,
-    Utilisateur_ID INT,
-    Livre_ID INT,
-    DateReservation DATE,
-    FOREIGN KEY (Utilisateur_ID) REFERENCES Utilisateurs(ID),
-    FOREIGN KEY (Livre_ID) REFERENCES Livres(ID)
+    ID INT(11) NOT NULL AUTO_INCREMENT,
+    Utilisateur_ID INT(11) DEFAULT NULL,
+    Livre_ID INT(11) DEFAULT NULL,
+    DateReservation DATE DEFAULT NULL,
+    PRIMARY KEY (ID)
 );
 
 -- Insertion de données dans la table Livres
