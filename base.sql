@@ -23,8 +23,7 @@ CREATE TABLE Utilisateurs (
     Role VARCHAR(50) NOT NULL,
     DateInscription DATE NOT NULL,
     MotDePasse VARCHAR(255) NOT NULL,
-    PRIMARY KEY (ID),
-    UNIQUE KEY (Email)
+    PRIMARY KEY (ID)
 );
 
 -- Table Emprunts
