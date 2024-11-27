@@ -60,8 +60,8 @@ VALUES
 INSERT INTO Utilisateurs (ID, Nom, Email, Role, DateInscription, MotDePasse)
 VALUES 
     ('user', 'user@gmail.com', 'User', '2024-11-25', 'user'),
-    ('admin', 'admin@gmail.com', 'User', '2024-11-25', 'admin'),
-    ('bib', 'bib@gmail.com', 'User', '2024-11-25', 'bib'),
+    ('admin', 'admin@gmail.com', 'Admin', '2024-11-25', 'admin'),
+    ('bib', 'bib@gmail.com', 'Bibliothecaire', '2024-11-25', 'bib'),
     ('Jean Dupont', 'jean.dupont@example.com', 'User', '2024-01-15', 'password1'),
     ('Marie Curie', 'marie.curie@example.com', 'User', '2024-02-20', 'password2'),
     ('Paul Verlaine', 'paul.verlaine@example.com', 'User', '2023-11-10', 'password3'),
