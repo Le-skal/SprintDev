@@ -57,7 +57,7 @@ VALUES
     ('Don Quichotte', 'Miguel de Cervantes', 'Non-fiction', 'Disponible');
 
 -- Insertion de données dans la table Utilisateurs
-INSERT INTO Utilisateurs (ID, Nom, Email, Role, DateInscription, MotDePasse)
+INSERT INTO Utilisateurs (Nom, Email, Role, DateInscription, MotDePasse)
 VALUES 
     ('user', 'user@gmail.com', 'User', '2024-11-25', 'user'),
     ('admin', 'admin@gmail.com', 'Admin', '2024-11-25', 'admin'),
